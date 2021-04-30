@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         // refenzio programmaticamente la TextView presente nel layout
         TextView myTextView = findViewById(R.id.textViewTest);
-        myTextView.setText("Pulsante premuto: 0 volte");
+        myTextView.setText("Pulsante premuto: 0 volte emulatore");
 
         //refenzio pulsante
         Button myButton = findViewById(R.id.buttonTest);
@@ -37,5 +37,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.i("CISITA", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.i("CISITA", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.i("CISITA", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.i("CISITA", "onDestroy");
     }
 }
